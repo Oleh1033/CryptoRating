@@ -208,9 +208,19 @@ input{
 .swa {
     background-image: url(https://icotop.io/wp-content/uploads/2018/04/00568EF8-AD29-459B-9496-8E2C63DF5EC1-Prashant-Chaturvedi-110x110.png);
     background-size: 40px 40px;
-
 }
-
+.dao{
+    background-image: url(https://icotop.io/uploads/e3e8f5bf5433846adf2441d7cd3f347e-110x110.png);
+    background-size: 40px 40px;
+}
+.awo {
+    background-image: url(https://icotop.io/uploads/8174135f6d09aa975fa3d4cf7870781d-110x110.png);
+    background-size: 40px 40px;
+}
+.bet {
+    background-image: url(https://icotop.io/uploads/985b4699c089004a99eb52ed8d7ea81b-110x110.png);
+    background-size: 40px 40px;
+}
 /* Subscribe 120 ------------------------------------*/
 .subscribe {
     height: 310px;
