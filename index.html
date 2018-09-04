@@ -57,39 +57,86 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>ICO`s review</h1>
-                    <p>Look up a specific of startups and analytical review</p>
+                    <p class="specific">Look up a specific of startups and analytical review</p>
                 </div>
             </div>
-            <div class="row justify-content-between">
+            <div class="row justify-content-between filter">
                 <div class="col-lg-7">
-                    <input name="search" type="search" value="Search by name. For example: Bitcoin" autocomplete="false">
+                    <input id="bit_input" name="search" type="search" placeholder="Search by name. For example: Bitcoin" autocomplete="false">
                 </div>
-                <div class="col-lg-5">
-                    <ul class="nav justify-content-between">
-                        <li ><a class="ico_type" href="">All</a></li>
-                        <li ><a class="ico_type" href="">Ongoing</a></li>
-                        <li ><a class="ico_type" href="">Upcoming</a></li>
-                        <li ><a class="ico_type" href="">Past</a></li>
-                        <li ><a class="ico_type" href="">Scam</a></li>
+                <div class="col-lg-5 float-top">
+                    <ul class="nav">
+                        <li class="ico_type_li"><a class="ico_type" href="">All</a></li>
+                        <li class="ico_type_li"><a class="ico_type" href="">Ongoing</a></li>
+                        <li class="ico_type_li"><a class="ico_type" href="">Upcoming</a></li>
+                        <li class="ico_type_li"><a class="ico_type" href="">Past</a></li>
+                        <li class="ico_type_li"><a class="ico_type" href="">Scam</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <p class="bigger_text">Assessed projects</p>
-                    <p class="normal_text">Project name</p>
-
+            <div class="ico_table">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <p class="bigger_text">Assessed projects</p>
+                        
+                    </div>
                 </div>
-                <div class="col-lg-9">
-                    <ul class="nav justify-content-between">
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">Boom rate</p></li>
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">Risk rate</p></li>
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">Category</p></li>
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">Analytics</p></li>
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">Start ICO</p></li>
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">End ICO</p></li>
-                        <li><i class="fas fa-info-circle"></i><p class="normal_text">Total rate</p></li>
-                    </ul>
+            </div>
+            <div class="table_ico">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
+                                <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row"><div class="icon swa"></div></th>
+                                <td class="name"></td>
+                                <td class="boom"></td>
+                                <td class="risk"></td>
+                                <td class="categ"></td>
+                                <td class="analyt"></td>
+                                <td class="start"></td>
+                                <td class="end"></td>
+                                <td class="total"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><div class="icon swa"></div></th>
+                                <td class="name"></td>
+                                <td class="boom"></td>
+                                <td class="risk"></td>
+                                <td class="categ"></td>
+                                <td class="analyt"></td>
+                                <td class="start"></td>
+                                <td class="end"></td>
+                                <td class="total"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><div class="icon swa"></div></th>
+                                <td class="name"></td>
+                                <td class="boom"></td>
+                                <td class="risk"></td>
+                                <td class="categ"></td>
+                                <td class="analyt"></td>
+                                <td class="start"></td>
+                                <td class="end"></td>
+                                <td class="total"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
