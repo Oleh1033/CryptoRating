@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CryptoRating</title>
+    <title>CryptoRating/Premium</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -41,10 +44,10 @@
                 </div>
                 <div class="col-lg-6 ">
                     <ul class="nav">
-                        <li class=""><a id="analys" class="nav-item bord" href="#">Order Analytics</a></li>
-                        <li class=""><a class="nav-item" href="rating-system.html">Rating system</a></li>
-                        <li class=""><a class="nav-item" href="about-us.html">About us</a></li>
-                        <li class=""><a id="addICO" class="nav-item blue" href="#">Add you ICO</a></li>
+                        <li class=""><a id="analys" class="nav-item head bord" href="#">Order Analytics</a></li>
+                        <li class=""><a class="nav-item head" href="rating-system.html">Rating system</a></li>
+                        <li class=""><a class="nav-item head" href="about-us.html">About us</a></li>
+                        <li class=""><a id="addICO" class="nav-item head blue" href="#">Add you ICO</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,146 +67,657 @@
                 <div class="col-lg-7">
                     <input id="bit_input" name="search" type="search" placeholder="Search by name. For example: Bitcoin" autocomplete="false">
                 </div>
-                <div class="col-lg-5 float-top">
+                <div class="col-lg-5 float-top filter_but " >
                     <ul class="nav">
-                        <li class="ico_type_li"><a class="ico_type" href="">All</a></li>
-                        <li class="ico_type_li"><a class="ico_type" href="">Ongoing</a></li>
-                        <li class="ico_type_li"><a class="ico_type" href="">Upcoming</a></li>
-                        <li class="ico_type_li"><a class="ico_type" href="">Past</a></li>
-                        <li class="ico_type_li"><a class="ico_type" href="">Scam</a></li>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab"
+                                   aria-controls="pills-home" aria-selected="false">All</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-ongoing-tab" data-toggle="pill" href="#pills-ongoing" role="tab"
+                                   aria-controls="pills-profile" aria-selected="true">Ongoing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-upcoming-tab" data-toggle="pill" href="#pills-upcoming" role="tab"
+                                   aria-controls="pills-contact" aria-selected="false">Upcoming</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-past-tab" data-toggle="pill" href="#pills-past" role="tab"
+                                   aria-controls="pills-contact" aria-selected="false">Past</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-scam-tab" data-toggle="pill" href="#pills-scam" role="tab"
+                                   aria-controls="pills-contact" aria-selected="false">Scam</a>
+                            </li>
+
+                        </ul>
                     </ul>
                 </div>
             </div>
-            <div class="ico_table">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <p class="bigger_text">Assessed projects</p>
+            <div>
 
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                        <div class="ico_table">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <p class="bigger_text">Assessed projects</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_ico">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade " id="pills-ongoing" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="ico_table">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <p class="bigger_text">Assessed projects</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_ico">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-upcoming" role="tabpanel" aria-labelledby="pills-upcoming-tab">
+                        <div class="ico_table">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <p class="bigger_text">Assessed projects</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_ico">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-past" role="tabpanel" aria-labelledby="pills-past-tab">
+                        <div class="ico_table">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <p class="bigger_text">Assessed projects</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_ico">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-scam" role="tabpanel" aria-labelledby="pills-scam-tab">
+                        <div class="ico_table">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <p class="bigger_text">Other projects</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_ico">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
+                                            <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon dao"></div></th>
+                                            <td class="content name">Daox</td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">INCERTMENT</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">31.07.2018</td>
+                                            <td class="content end">30.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr><tr>
+                                            <th scope="row"><div class="icon swa"></div></th>
+                                            <td class="content name"><p>Swachhcoin</p></td>
+                                            <td class="content boom">HIGHT</td>
+                                            <td class="content risk">LOW</td>
+                                            <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
+                                            <td class="content analyt">YES</td>
+                                            <td class="content start">16.07.2018</td>
+                                            <td class="content end">18.09.2018</td>
+                                            <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="table_ico">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Project name</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Boom rate</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Risk rate</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Category</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Analytics</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Start ICO</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> End ICO</th>
-                                <th scope="col"><i class="fas fa-info-circle"></i> Total rate</th>
 
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row"><div class="icon swa"></div></th>
-                                <td class="content name"><p>Swachhcoin</p></td>
-                                <td class="content boom">HIGHT</td>
-                                <td class="content risk">LOW</td>
-                                <td class="content categ">BLOCKCHAIN INFRASTRUCTURE</td>
-                                <td class="content analyt">YES</td>
-                                <td class="content start">16.07.2018</td>
-                                <td class="content end">18.09.2018</td>
-                                <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><div class="icon dao"></div></th>
-                                <td class="content name">Daox</td>
-                                <td class="content boom">HIGHT</td>
-                                <td class="content risk">LOW</td>
-                                <td class="content categ">INCERTMENT</td>
-                                <td class="content analyt">YES</td>
-                                <td class="content start">31.07.2018</td>
-                                <td class="content end">30.09.2018</td>
-                                <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><div class="icon awo"></div></th>
-                                <td class="content name"></td>
-                                <td class="content boom"></td>
-                                <td class="content risk"></td>
-                                <td class="content categ"></td>
-                                <td class="content analyt"></td>
-                                <td class="content start"></td>
-                                <td class="content end"></td>
-                                <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><div class="icon bet"></div></th>
-                                <td class="content name"></td>
-                                <td class="content boom"></td>
-                                <td class="content risk"></td>
-                                <td class="content categ"></td>
-                                <td class="content analyt"></td>
-                                <td class="content start"></td>
-                                <td class="content end"></td>
-                                <td class="content total"><img class="rate" src="img/rate/a1.jpg" alt=""></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
+
         </div>
     </section>
 
     <section class="subscribe">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 email">
                     <p>Subscribe to stay notified about all new ICO</p>
                     <input class="pd15 " type="email" value="Enter you Email">
                     <button class="white pd15">Subscribe</button>
                 </div>
-                <div class="col-lg-4"></div>
+                <div class="col-lg-4 plane">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
             </div>
         </div>
     </section>
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2"></div>
+                <div class="col foot-cont foot-logo"><a href="index.html"><p>CRYPTO</br>RATING</p></a></div>
+                <div class="col foot-cont foot-premium"><a  href="premium.html">Premium Listing</a></div>
+                <div class="col foot-cont foot-soc"><div >
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                </div></div>
+                <div class="col foot-cont foot-email"><a href="#"> Contacts: info@cryptorating.icu</a></div>
             </div>
         </div>
     </footer>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </html>
