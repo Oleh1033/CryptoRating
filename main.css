@@ -158,6 +158,10 @@ input{
 }
 
 /* ICO review -----------------------------------*/
+.table th {
+    padding-right:0;!important;
+    padding-left:0;!important;
+}
 .ico_rev{
     color: #777;
 }
@@ -173,7 +177,7 @@ input{
     padding-bottom:100px;
 }
 #bit_input{
-    width:650px;
+    width:100%;
     border: none;
     border-bottom: 1px solid #6b6b6b;
     height:60px;
@@ -223,22 +227,22 @@ input{
 
 .swa {
     background-image: url(https://icotop.io/wp-content/uploads/2018/04/00568EF8-AD29-459B-9496-8E2C63DF5EC1-Prashant-Chaturvedi-110x110.png);
-    background-size: 40px 40px;
+    background-size: 40px 100%;
 }
 .dao{
     background-image: url(https://icotop.io/uploads/e3e8f5bf5433846adf2441d7cd3f347e-110x110.png);
-    background-size: 40px 40px;
+    background-size: 40px 100%;
 }
 .awo {
     background-image: url(https://icotop.io/uploads/8174135f6d09aa975fa3d4cf7870781d-110x110.png);
-    background-size: 40px 40px;
+    background-size: 40px 100%;
 }
 .bet {
     background-image: url(https://icotop.io/uploads/985b4699c089004a99eb52ed8d7ea81b-110x110.png);
-    background-size: 40px 40px;
+    background-size: 40px 100%;
 }
 .pep {
-    background-size: 40px 40px;
+    background-size: 40px 100%;
     background-image: url(https://icotop.io/wp-content/uploads/2018/04/pep_network_dark_wt-You-Crypto-110x110.png);
 }
 
@@ -246,19 +250,18 @@ input{
 .subscribe {
     height: 310px;
     background-color: #35b2e6;
+    padding-bottom: 40px;
 }
-.plane{
-    font-size: 200px;
-    color: white;
+.plane img{
+    width: 150px;
+    height:100%;
 }
-.pr.plane {
-    padding-top: 50px;
-}
-.email{
-    padding-top: 70px;
+
+.ema{
+    padding-top:30px;
 }
 .subscribe p{
-    padding-bottom:20px;
+    padding:40px 0px 0px 0px;
     color: white;
     font-size: 26px;
 }
@@ -271,15 +274,15 @@ input{
 input.pd15 {
     color: white;
     padding-left:20px;
-    width:400px;
+    width:100%;
     background-color: #35b2e6;
     border: 1px solid white;
 }
 button.pd15{
     color: #35b2e6;
     background-color: #fff;
-    width:185px;
-    margin-left: 25px;
+    width:100%;
+
 }
 /* Foooter 100  ---------------------------------------------------------- */
 .footer {
@@ -379,9 +382,7 @@ h2  {
     position: absolute;
     margin-left: 250px;
 }
-.wrapper-star{
-    margin-left: 100px;
-}
+
 .text-box {
     width: 900px;
     height: 350px;
@@ -478,3 +479,6 @@ h2  {
 .dark-blue{
     background-color: #2e3c5c;
 }
+
+/* ---------------------------------------------------- */
+
