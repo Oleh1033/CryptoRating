@@ -400,8 +400,7 @@ h2  {
     font-weight:500;
 }
 
-.offers{
-
+.wpap_offer{
     width: 250px;
     height: 800px;
     box-shadow: 0px -15px 64px 0px rgba(196, 198, 195, 0.27);
@@ -432,7 +431,7 @@ h2  {
 
 }
 .price{
-    width: 250px;
+    width: 100%;
     height:65px;
     padding-top:25px;
     font-size: 20px;
@@ -576,21 +575,28 @@ h2  {
         margin-bottom: 15px;
     }
     .offers {
-        height: 600px;
+        height: 620px;
         margin-top:40px;
+        padding-right: 0px;
+        padding-left: 0px;
     }
     .offers ul {
-        height: 330px;
+        height: 350px;
     }
     .offers li {
-        font-size:0.6em;
-        padding: 5px;
+        font-size:0.8em;
+        padding: 4px;
     }
     h2 {
         margin-bottom: 10px;
     }
     .descr {
         padding: 20px;
+    }
+    .wpap_offer{
+        width: 325px;;
+        margin-left:25px;
+        height: 580px;
     }
 }
 
