@@ -88,14 +88,11 @@ input{
     font-size: 42px;
     transform: rotate(45deg);
 }
-.close3{
-    width: 600px;
-}
+
 .close2{
-    width: 42px;
     color:#2d9dd4 ;
     top:0;
-    float: right;
+    right: 250px;
     font-size: 42px;
     transform: rotate(45deg);
 }
@@ -177,7 +174,7 @@ input{
     padding-bottom:100px;
 }
 #bit_input{
-    width:100%;
+    width:90%;
     border: none;
     border-bottom: 1px solid #6b6b6b;
     height:60px;
@@ -185,18 +182,6 @@ input{
     font-size: 18px;
     line-height: 60px;
     margin-top:20px;
-}
-.ico_type_li{
-    height:60px;
-    padding:20px;
-    border:1px solid rgba(107, 107, 107, 0.61);
-    text-decoration: none;
-}
-.ico_type:hover{
-    text-decoration: none;
-}
-.ico_type_li:hover{
-    background-color: rgba(107, 107, 107, 0.2);
 }
 
 .ico_table{
@@ -220,9 +205,6 @@ input{
     width: 40px;
     height: 40px;
     margin: 8px 0 8px 8px;
-}
-.filter_but{
-    padding-left:40px;
 }
 
 .swa {
@@ -286,7 +268,7 @@ button.pd15{
 }
 /* Foooter 100  ---------------------------------------------------------- */
 .footer {
-    height:120px;
+    height:150px;
     background-color: #2e3c5c;
     color: white;
 }
@@ -336,6 +318,7 @@ h2  {
     margin-bottom:10px;
 }
 
+
 /* ABOUT US------------------------------------------------------------------*/
 .about-us{
     padding:100px;
@@ -350,7 +333,9 @@ h2  {
     padding-top:85px;
     padding-bottom:100px;
 }
-
+.wrapper-star{
+    position: relative;
+}
 .star {
     box-shadow: 0px 0px 64px 1px rgba(245,225,95,1);
     margin-left:25px;
@@ -359,7 +344,7 @@ h2  {
     background-color: #f5cc3d ;
     border-radius: 45px;
     font-size: 25px;
-    padding-top:32px;
+    line-height: 90px;
     color: white;
 }
 .premium{
@@ -378,13 +363,14 @@ h2  {
     color: white;
 }
 .wrapper{
+    width:100%;
     color: white;
     position: absolute;
 
 }
 
 .text-box {
-    width: 900px;
+    width: 100%;
     height: 350px;
     margin-top:45px;
     padding:110px;
@@ -480,5 +466,160 @@ h2  {
     background-color: #2e3c5c;
 }
 
-/* ---------------------------------------------------- */
 
+/* --------------MEDIA-------------------------------- */
+@media screen and (max-width: 600px) {
+    .navbar-right{
+        margin-left:10px;
+    }
+    a.nav-item.head {
+
+        padding:12px 6px;
+        font-size:0.8em;
+    }
+    .filter_but{
+        padding:0px 10px;
+    }
+
+    .ema {
+        padding-top:10px;
+    }
+    a.nav-link {
+        font-size:0.9em;
+        padding: 0.5rem 0.6rem;
+    }
+    .foot-logo{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .foot-premium{
+        font-size:15px;
+        margin-top: 10px;
+    }
+    .foot-soc{
+        width: 100%;
+        margin-top:0px;
+        font-size: 20px;
+        margin-left: 100px;
+    }
+    .foot-email{
+        margin-top:10px;
+        font-size: 14px;
+    }
+    #bit_input{
+        width:90%;
+        font-size: 14px;
+    }
+    /* Rating System */
+    .inline {
+        font-size:0.8em;
+    }
+    .rate {
+        margin-bottom: 5px;
+    }
+
+    /* About us */
+    .about-us{
+        padding-left: 22px;
+        padding-right: 20px;
+        padding-top: 50px;
+
+    }
+    p.descr-about {
+        font-size:0.9em;
+    }
+    /* MODAL */
+
+    .modal_content {
+        width: 100%;
+    }
+    .pop_up{
+        width: 80%;
+    }
+    .pop_up2{
+        width: 80%;
+    }
+    .modal_content2 {
+        width: 100%;
+    }
+    .close{
+        right: 0px;
+        float: none;
+    }
+    .close2{
+        right: 0px;
+        float: none;
+    }
+    /* --------------------------- */
+    .star {
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+    }
+    .premium{
+        height: 60px;
+        width: 185px;
+        border-radius: 30px;
+    }
+    .text-box{
+        margin-top:30px;
+        padding:20px;
+
+    }
+    .text-box p {
+        font-size: 14px;
+        line-height: 28px;
+
+    }
+    .line {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .offers {
+        height: 600px;
+        margin-top:40px;
+    }
+    .offers ul {
+        height: 330px;
+    }
+    .offers li {
+        font-size:0.6em;
+        padding: 5px;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+    .descr {
+        padding: 20px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+    .star {
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        line-height: 60px;
+    }
+    .premium{
+        height: 60px;
+        width: 200px;
+        border-radius: 30px;
+        line-height: 60px;
+    }
+
+    .text-box{
+        margin-top:30px;
+        padding:60px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .line {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
